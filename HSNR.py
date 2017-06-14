@@ -37,7 +37,7 @@ from oemof import outputlib
 # Default logger of oemof
 from oemof.tools import logger
 from oemof.tools import helpers
-from examples.solph.HSNR_Energiesysteme.parameter import values
+from examples.solph.HSNR_Energiesysteme import values
 #from oemof.tools import values
 
 # import oemof base classes to create energy system objects
