@@ -6,6 +6,6 @@ git clone https://github.com/albert2804/HSNR_Energiesysteme 		----> Lädt das Mod
 git add <Filename>
 git commmit -m "Hier die Nachricht einfügen" <Filename>
 
-git push <Filename> 							----> Lädt die commitete Datei in GitHub hoch
+git push <https://github.com/albert2804/HSNR_Energiesysteme > 		----> Lädt die commitete Datei in GitHub hoch
 
 git pull oder git fetch
