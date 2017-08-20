@@ -37,7 +37,7 @@ from oemof import outputlib
 # Default logger of oemof
 from oemof.tools import logger
 from oemof.tools import helpers
-from examples.solph.HSNR_Energiesysteme import values
+#from HSNR_Energiesysteme import values
 #from oemof.tools import values
 
 # import oemof base classes to create energy system objects
@@ -46,6 +46,7 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import oemof.solph as solph
+import values
 
 def optimise_storage_size(filename="HSNR.csv", solvername='cbc',
                           debug=True, number_timesteps=8760, tee_switch=True):
@@ -62,7 +63,7 @@ def optimise_storage_size(filename="HSNR.csv", solvername='cbc',
     ##########################################################################
     # Create oemof object
     ##########################################################################
-    #Die Variablen mit values.xyz wurden in values.py ausgelagert
+    #Die Variablen z.B. values.lignite wurden in der Datei values.py ausgelagert
     logging.info('Create oemof objects')
 
     # create thermal and electricity bus
@@ -303,8 +304,8 @@ def create_plots(energysystem):
         lineorder=['demand', 'storage', 'excess_bel'],
         line_kwa={'linewidth': 4},
         ax=fig.add_subplot(1, 1, 1),
-        date_from=values.datefrom,
-        date_to=values.dateto,
+        date_from="2012-06-01 00:00:00",
+        date_to="2012-06-08 00:00:00",
         )
     myplot.ax.set_ylabel('Power in MW')
     myplot.ax.set_xlabel('Date')
