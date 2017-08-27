@@ -1,28 +1,39 @@
 import csv
+import os
+#import raw_data        das '#' entfernen, sobald das verknüpfen mit raw_data funktioniert
 
-raw=open('reg.csv')
-rawHSNR=open('HSNR.csv')
+os.remove("HSNR.csv")
 
-liste_reg=csv.reader(raw)
+################## Rohdatenerfassung ################################
+rawOPSD=open('opsd.csv')
+rawHSNR=open('HSNR_ohne_regenerative.csv')
+
+liste_opsd=csv.reader(rawOPSD)
 liste_HSNR=csv.reader(rawHSNR)
 
-zeitreihe =[]
-for row in liste_reg:
-    zeitreihe.append(row [4])
-#    for i in range (4,7):
-#        zeitreihe.append(row [i])
-#    zeitreihe.append(row [4])
-#    zeitreihe.append(row [5])
-#    zeitreihe.append(row [6])
-print (zeitreihe)
+opsd=list(liste_opsd)   #hier wird eine Liste des gesamten CSV-files opsd erstellt
+HSNR=list(liste_HSNR)   #hier wird eine Liste des gesamten CSV-files HSNR erstellt
 
-raw.close()
+rawOPSD.close()
 rawHSNR.close()
+######################################################################
 
 
-with open("Probe.csv", "a") as f:
+################### CSV-Manipulation #################################
+# Hier werden die Rohdaten von OPSD mit dem HSNR.csv zusammengeführt #
+######################################################################
+zeitreihe =[]
+for row in opsd:
+    zeitreihe.append(row [3:9])
+#print(zeitreihe)
+
+
+
+with open("HSNR.csv", "a",newline='') as f:
     writer=csv.writer(f)
-    for i in range (0,20):
-        writer.writerow(zeitreihe[i])
+    for row in range (0,8761):
+        writer.writerow(HSNR[row]+zeitreihe[row])
+
 f.close()
+
     

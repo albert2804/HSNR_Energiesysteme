@@ -37,8 +37,7 @@ from oemof import outputlib
 # Default logger of oemof
 from oemof.tools import logger
 from oemof.tools import helpers
-#from HSNR_Energiesysteme import values
-#from oemof.tools import values
+
 
 # import oemof base classes to create energy system objects
 import logging
@@ -304,8 +303,8 @@ def create_plots(energysystem):
         lineorder=['demand', 'storage', 'excess_bel'],
         line_kwa={'linewidth': 4},
         ax=fig.add_subplot(1, 1, 1),
-        date_from="2012-06-01 00:00:00",
-        date_to="2012-06-08 00:00:00",
+        date_from="2012-08-01 00:00:00",
+        date_to="2012-09-08 00:00:00",
         )
     myplot.ax.set_ylabel('Power in MW')
     myplot.ax.set_xlabel('Date')
