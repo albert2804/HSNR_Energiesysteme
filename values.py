@@ -1,7 +1,6 @@
 #################################################
 ########    Nominal Values  (Kapazität)  ########
 #################################################
-<<<<<<< HEAD
 biomass=1
 brown_lig=1
 coal_derived_gas=1
@@ -22,15 +21,6 @@ solar=1
 waste=1
 wind_offshore=1
 
-=======
-wind=10
-nuc=0
-pv=1
-lignite=0
-coal=0
-water=0
-biomass=0
->>>>>>> abd36e0128a1525e2515063207fb26355b67d384
 
 
 
